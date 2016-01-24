@@ -20,19 +20,11 @@ import net.mobindustry.rxedu.ui.dialog.ProgressDialog;
 import net.mobindustry.rxedu.utils.DialogHelper;
 import net.mobindustry.rxedu.utils.RxUtils;
 
-import java.util.ArrayList;
-
 import rx.Subscription;
 
 public class RetrofitFragment extends Fragment {
 
-    /**
-     * Load users
-     * show in list
-     * tap on item - open user view and load items for user
-     */
     private static final String TAG = RetrofitFragment.class.getSimpleName();
-    private static final String USER_LIST_SAVE_KEY = "USER_LIST_SAVE_KEY";
 
     private TextView vLoadUsersListButton;
     private ListView vResultListView;
