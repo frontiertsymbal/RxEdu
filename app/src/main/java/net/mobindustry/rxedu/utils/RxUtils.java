@@ -1,6 +1,7 @@
 package net.mobindustry.rxedu.utils;
 
 import android.content.Context;
+
 import net.mobindustry.rxedu.ui.dialog.ProgressDialog;
 
 import rx.Observable;
@@ -14,7 +15,8 @@ public class RxUtils {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(() -> DialogHelper.showProgressDialog(context, dialog))
-                .doOnCompleted(() -> DialogHelper.dismissProgressDialog(context));
+                .doOnCompleted(() -> DialogHelper.dismissProgressDialog(context))
+                .doOnError(e -> DialogHelper.dismissProgressDialog(context));
     }
 
 }

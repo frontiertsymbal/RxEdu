@@ -18,7 +18,7 @@ import rx.Observable;
 
 public class ApiManager {
 
-    public static final String URL = "http://jsonplaceholder.typicode.com";
+    private static final String URL = "http://jsonplaceholder.typicode.com";
 
     private static ApiManager singleton;
     private static ApiInterface mService;
@@ -48,8 +48,7 @@ public class ApiManager {
 
     public Observable<User> getUsers() {
         return mService.getUserList()
-                .flatMap(Observable::from)
-                .cache();
+                .flatMap(Observable::from);
     }
 
     public Observable<Post> getPosts(int userId) {

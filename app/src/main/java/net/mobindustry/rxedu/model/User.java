@@ -3,9 +3,8 @@ package net.mobindustry.rxedu.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
-public class User implements Serializable{
+public class User implements Serializable {
 
     private int id;
     private String name;

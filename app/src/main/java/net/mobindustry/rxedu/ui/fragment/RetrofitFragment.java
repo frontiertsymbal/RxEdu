@@ -69,8 +69,7 @@ public class RetrofitFragment extends Fragment {
     }
 
     private void openUserInfoFragment(User user) {
-        UserInfoFragment fragment = new UserInfoFragment();
-        fragment.putUser(user);
+        UserInfoFragment fragment = UserInfoFragment.newInstance(user);
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .addToBackStack(UserInfoFragment.TAG)

@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DialogHelper {
 
-    public static final int TEXT_DIALOG_SHOW_TIME = 3;
+    public static final int TEXT_DIALOG_SHOW_TIME = 2;
 
     public static void showDialog(Context context, final String TAG, DialogFragment dialogFragment) {
         FragmentTransaction ft = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
