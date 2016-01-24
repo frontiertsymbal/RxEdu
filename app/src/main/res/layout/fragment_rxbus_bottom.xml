@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue">
+
+    <TextView
+        android:id="@+id/rxbusTapCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/rxBusCountTextSize"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/rxbusTapText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:paddingBottom="@dimen/marginBig"
+        android:text="tap!"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/rxBusTapTextSize"
+        android:visibility="invisible" />
+
+</FrameLayout>

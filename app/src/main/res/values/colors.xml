@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="button">#5e4848</color>
+    <color name="pressedButton">#4d3b3b</color>
+    <color name="disabledButton">#7b7777</color>
+    <color name="buttonText">#ffffff</color>
+
+    <color name="resultText">#ffffff</color>
+    <color name="mainText">#ffffff</color>
+    <color name="hintText">#707070</color>
+
+    <color name="fragmentBackground">#ff434041</color>
+    <color name="activityBackground">#ff434041</color>
+    <color name="editTextBackground">#595456</color>
+
+    <color name="progressBarColor">#0022ff</color>
+    <color name="progressDialogTextColor">#000000</color>
+    <color name="textDialogTextColor">#000000</color>
+
+    <color name="red">#eb676b</color>
+    <color name="blue">#488cef</color>
+    <color name="green">#3bc4a2</color>
+    <color name="gray">#cfcfcf</color>
+</resources>

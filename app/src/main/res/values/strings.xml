@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">RxEdu</string>
+
+    <!-- button -->
+    <string name="tapBufferFragment">Tap buffer</string>
+    <string name="searchFragment">Search</string>
+
+    <string name="tapMe">Tap me</string>
+
+    <!-- title -->
+    <string name="bufferFragmentTitle">Накапливание данных с помощью операции .buffer();\nНажмите на кнопку многократно и в списке будет отображаться информация о нажатиях и результат счетчика нажатий за период 2 секунды</string>
+    <string name="searchHint">Input search query</string>
+    <string name="submitButton">Submit</string>
+    <string name="x"> X </string>
+    <string name="enterEmail">Enter a valid email:</string>
+    <string name="password">Password (> than 8 chars)</string>
+    <string name="number">Number (between 1 and 100)</string>
+    <string name="validationFragment">Validation</string>
+    <string name="loadUsersList">Load users list</string>
+    <string name="test">Test</string>
+    <string name="retrofit">Retrofit</string>
+    <string name="plus">+</string>
+    <string name="zero">0</string>
+    <string name="doubleBindingButton">Double binding editText</string>
+    <string name="tap">Tap</string>
+    <string name="rxBusTest">RxBus test</string>
+    <string name="onCompleted">onCompleted</string>
+    <string name="gotATap">GOT A TAP</string>
+    <string name="onError">onError</string>
+    <string name="tapsCount">%d taps</string>
+    <string name="noTapsInPeriod">No taps in period</string>
+    <string name="searchingFor">Searching for %s</string>
+    <string name="submitSuccess">Submit success</string>
+    <string name="invalidEmail">Invalid email!</string>
+    <string name="invalidPassword">Invalid password!</string>
+    <string name="invalidNumber">Invalid number!</string>
+    <string name="loadingUsers">Loading list of users</string>
+
+</resources>

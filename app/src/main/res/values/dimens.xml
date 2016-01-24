@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--margin-->
+    <dimen name="marginVerySmall">2dp</dimen>
+    <dimen name="marginSmall">5dp</dimen>
+    <dimen name="margin">10dp</dimen>
+    <dimen name="marginMedium">15dp</dimen>
+    <dimen name="marginBig">20dp</dimen>
+    <dimen name="marginVeryBig">30dp</dimen>
+
+    <!--padding-->
+    <dimen name="paddingVerySmall">2dp</dimen>
+    <dimen name="paddingSmall">5dp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="paddingMedium">15dp</dimen>
+    <dimen name="paddingBig">20dp</dimen>
+    <dimen name="paddingVeryBig">30dp</dimen>
+
+    <!--text size-->
+    <dimen name="buttonText">20sp</dimen>
+    <dimen name="resultText">12sp</dimen>
+    <dimen name="titleText">16sp</dimen>
+
+    <dimen name="buttonCorner">3dp</dimen>
+    <dimen name="buttonStroke">2dp</dimen>
+    <dimen name="progressDialogMaxWidth">350dp</dimen>
+    <dimen name="progressDialogTextSize">16sp</dimen>
+    <dimen name="doubleBindingEditTextHeight">50dp</dimen>
+    <dimen name="doubleBindingResultTextSize">45sp</dimen>
+
+    <dimen name="buttonRadius">100dp</dimen>
+
+    <dimen name="rxBusTapButtonSize">90dp</dimen>
+    <dimen name="rxBustTapButtonTextSize">24sp</dimen>
+    <dimen name="rxBusCountTextSize">60sp</dimen>
+    <dimen name="rxBusTapTextSize">20sp</dimen>
+    <dimen name="textDialogMinWidth">300dp</dimen>
+    <dimen name="textDialogMaxWidth">350dp</dimen>
+    <dimen name="textDialogTextSize">16sp</dimen>
+
+</resources>

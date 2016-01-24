@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragmentBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tapBufferFragmentButton"
+        style="@style/Button"
+        android:text="@string/tapBufferFragment" />
+
+    <TextView
+        android:id="@+id/searchFragmentButton"
+        style="@style/Button"
+        android:text="@string/searchFragment" />
+
+    <TextView
+        android:id="@+id/validationFragmentButton"
+        style="@style/Button"
+        android:text="@string/validationFragment" />
+
+    <TextView
+        android:id="@+id/retrofitFragmentButton"
+        style="@style/Button"
+        android:text="@string/retrofit" />
+
+    <TextView
+        android:id="@+id/doubleBindingFragmentButton"
+        style="@style/Button"
+        android:text="@string/doubleBindingButton" />
+
+    <TextView
+        android:id="@+id/rxBusFragmentButton"
+        style="@style/Button"
+        android:text="@string/rxBusTest" />
+
+    <TextView
+        android:id="@+id/testFragmentButton"
+        style="@style/Button"
+        android:text="@string/test" />
+
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/editTextBackground"
+        android:orientation="vertical"
+        android:padding="@dimen/paddingSmall">
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/paddingVerySmall"
+            android:textColor="@color/resultText"
+            android:textSize="@dimen/resultText"
+            tools:text="User Name" />
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/paddingVerySmall"
+            android:textColor="@color/resultText"
+            android:textSize="@dimen/resultText"
+            tools:text="User Email" />
+    </LinearLayout>
+
+
+</LinearLayout>

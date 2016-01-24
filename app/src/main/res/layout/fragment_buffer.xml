@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fragmentBackground">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding"
+        android:textColor="@color/mainText"
+        android:textSize="@dimen/titleText"
+        android:gravity="center_horizontal"
+        android:text="@string/bufferFragmentTitle"/>
+
+        <TextView
+            android:id="@+id/tapMeButton"
+            style="@style/Button"
+            android:text="@string/tapMe" />
+
+    <ListView
+        android:id="@+id/resultListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null">
+
+    </ListView>
+</LinearLayout>

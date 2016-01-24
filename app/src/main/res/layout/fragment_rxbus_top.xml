@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:background="@color/green"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <Button
+        android:id="@+id/rxBusTap"
+        android:background="@drawable/button_round"
+        android:layout_gravity="center"
+        android:layout_height="@dimen/rxBusTapButtonSize"
+        android:layout_width="@dimen/rxBusTapButtonSize"
+        android:textSize="@dimen/rxBustTapButtonTextSize"
+        android:textColor="@android:color/white"
+        android:text="@string/tap"
+        />
+
+</FrameLayout>
