@@ -1,4 +1,4 @@
-package net.mobindustry.rxedu.rxBus;
+package net.mobindustry.rxedu.rx.rxBus;
 
 import rx.Observable;
 import rx.subjects.PublishSubject;
@@ -8,6 +8,7 @@ import rx.subjects.Subject;
 public class RxBus {
 
     private static RxBus rxBusSingleton = null;
+    private final Subject<Object, Object> rxBus = new SerializedSubject<>(PublishSubject.create());
 
     public static RxBus getRxBusSingleton() {
         if (rxBusSingleton == null) {
@@ -16,8 +17,6 @@ public class RxBus {
 
         return rxBusSingleton;
     }
-
-    private final Subject<Object, Object> rxBus = new SerializedSubject<>(PublishSubject.create());
 
     public void send(Object object) {
         rxBus.onNext(object);

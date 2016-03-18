@@ -23,8 +23,6 @@ public class DialogHelper {
         if (prev != null) {
             ft.remove(prev);
         }
-
-        // Create and show the dialog.
         dialogFragment.show(ft, TAG);
     }
 
@@ -73,7 +71,7 @@ public class DialogHelper {
                 try {
                     TimeUnit.SECONDS.sleep(seconds);
                 } catch (InterruptedException e) {
-                    Log.e("Tag", "Dialog InterruptedException", e);
+                    Log.e(context.getClass().getSimpleName(), "Dialog InterruptedException", e);
                 }
                 return null;
             }
@@ -89,14 +87,13 @@ public class DialogHelper {
         }.execute();
     }
 
+    // TODO: AlexTsymbal: reformat to showDialog
     public static void showProgressDialog(Context context, ProgressDialog loadDataProgressDialog) {
         FragmentTransaction ft = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
         Fragment prev = ((FragmentActivity) context).getSupportFragmentManager().findFragmentByTag(ProgressDialog.TAG);
         if (prev != null) {
             ft.remove(prev);
         }
-
-        // Create and show the dialog.
         loadDataProgressDialog.show(ft, ProgressDialog.TAG);
     }
 

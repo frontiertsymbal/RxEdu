@@ -21,6 +21,10 @@
     <dimen name="buttonText">20sp</dimen>
     <dimen name="resultText">12sp</dimen>
     <dimen name="titleText">16sp</dimen>
+    <dimen name="rxBustTapButtonTextSize">24sp</dimen>
+    <dimen name="rxBusCountTextSize">60sp</dimen>
+    <dimen name="rxBusTapTextSize">20sp</dimen>
+    <dimen name="textDialogTextSize">16sp</dimen>
 
     <dimen name="buttonCorner">3dp</dimen>
     <dimen name="buttonStroke">2dp</dimen>
@@ -32,11 +36,7 @@
     <dimen name="buttonRadius">100dp</dimen>
 
     <dimen name="rxBusTapButtonSize">90dp</dimen>
-    <dimen name="rxBustTapButtonTextSize">24sp</dimen>
-    <dimen name="rxBusCountTextSize">60sp</dimen>
-    <dimen name="rxBusTapTextSize">20sp</dimen>
     <dimen name="textDialogMinWidth">300dp</dimen>
     <dimen name="textDialogMaxWidth">350dp</dimen>
-    <dimen name="textDialogTextSize">16sp</dimen>
 
 </resources>

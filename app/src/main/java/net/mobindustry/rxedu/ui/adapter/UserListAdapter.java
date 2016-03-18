@@ -10,6 +10,9 @@ import android.widget.TextView;
 import net.mobindustry.rxedu.R;
 import net.mobindustry.rxedu.model.User;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class UserListAdapter extends ArrayAdapter<User> {
 
     private LayoutInflater inflater;
@@ -25,9 +28,7 @@ public class UserListAdapter extends ArrayAdapter<User> {
 
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.user_list_item, parent, false);
-            viewHolder = new ViewHolder();
-            viewHolder.userName = (TextView) convertView.findViewById(R.id.userName);
-            viewHolder.userEmail = (TextView) convertView.findViewById(R.id.userEmail);
+            viewHolder = new ViewHolder(convertView);
 
             convertView.setTag(viewHolder);
         } else {
@@ -41,8 +42,14 @@ public class UserListAdapter extends ArrayAdapter<User> {
         return convertView;
     }
 
-    private static class ViewHolder {
+    static class ViewHolder {
+        @Bind(R.id.userName)
         TextView userName;
+        @Bind(R.id.userEmail)
         TextView userEmail;
+
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
     }
 }

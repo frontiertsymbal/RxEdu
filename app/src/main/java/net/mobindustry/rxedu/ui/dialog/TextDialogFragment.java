@@ -17,11 +17,6 @@ public class TextDialogFragment extends DialogFragment {
     public static final String MESSAGE = "MESSAGE";
     public static final String RES_ID = "RES_ID";
 
-    public interface OnDialogEventInterface {
-
-        void onDismissDialog();
-    }
-
     public static TextDialogFragment newInstance(int stringResourceId) {
         return init(null, stringResourceId);
     }
@@ -57,5 +52,10 @@ public class TextDialogFragment extends DialogFragment {
             message.setText(getString(messageResId));
         }
         return view;
+    }
+
+    public interface OnDialogEventInterface {
+
+        void onDismissDialog();
     }
 }

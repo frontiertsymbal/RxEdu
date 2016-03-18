@@ -17,10 +17,10 @@ import net.mobindustry.rxedu.ui.adapter.ResultAdapter;
 import net.mobindustry.rxedu.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import rx.Observer;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 
@@ -29,8 +29,10 @@ public class BufferFragment extends Fragment {
     private static final String TAG = BufferFragment.class.getSimpleName();
     private final int BUFFER_TIMEOUT = 2;
 
-    private TextView vTapButton;
-    private ListView vResultListView;
+    @Bind(R.id.tapMeButton)
+    TextView vTapButton;
+    @Bind(R.id.resultListView)
+    ListView vResultListView;
 
     private ResultAdapter mResultAdapter;
     private ArrayList<String> mResultList;
@@ -40,9 +42,7 @@ public class BufferFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_buffer, container, false);
-        vResultListView = (ListView) view.findViewById(R.id.resultListView);
-        vTapButton = (TextView) view.findViewById(R.id.tapMeButton);
-
+        ButterKnife.bind(this, view);
         return view;
     }
 
@@ -69,7 +69,7 @@ public class BufferFragment extends Fragment {
     private Subscription getBufferedSubscription() {
         return RxView.clicks(vTapButton)
                 .map(onClickEvent -> {
-                    showResult(getContext().getString(R.string.gotATap));
+                    showResult(getString(R.string.gotATap));
                     return 1;
                 })
                 .buffer(BUFFER_TIMEOUT, TimeUnit.SECONDS)
@@ -77,13 +77,13 @@ public class BufferFragment extends Fragment {
                 .subscribe(
                         integers -> {
                             if (integers.size() > 0) {
-                                showResult(getContext().getString(R.string.tapsCount, integers.size()));
+                                showResult(getString(R.string.tapsCount, integers.size()));
                             } else {
-                                showResult(getContext().getString(R.string.noTapsInPeriod));
+                                showResult(getString(R.string.noTapsInPeriod));
                             }
                         },
-                        throwable -> showResult(getContext().getString(R.string.onError)),
-                        () -> Log.e(TAG, getContext().getString(R.string.onCompleted)) // you'll never reach here
+                        throwable -> showResult(getString(R.string.onError)),
+                        () -> Log.e(TAG, getString(R.string.onCompleted)) // you'll never reach here
                 );
     }
 

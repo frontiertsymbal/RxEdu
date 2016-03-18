@@ -16,8 +16,9 @@ import com.jakewharton.rxbinding.widget.RxTextView;
 
 import net.mobindustry.rxedu.R;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import rx.Observable;
-import rx.Observer;
 import rx.Subscription;
 
 import static android.text.TextUtils.isEmpty;
@@ -27,10 +28,14 @@ public class ValidationFragment extends Fragment {
 
     private static final String TAG = ValidationFragment.class.getSimpleName();
 
-    private TextView vSubmitButton;
-    private EditText vEmailEditText;
-    private EditText vPasswordEditText;
-    private EditText vNumberEditText;
+    @Bind(R.id.submitButton)
+    TextView vSubmitButton;
+    @Bind(R.id.emailEditText)
+    EditText vEmailEditText;
+    @Bind(R.id.passwordEditText)
+    EditText vPasswordEditText;
+    @Bind(R.id.numberEditText)
+    EditText vNumberEditText;
 
     private Observable<CharSequence> mEmailChangeObservable;
     private Observable<CharSequence> mPasswordChangeObservable;
@@ -42,13 +47,11 @@ public class ValidationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_validation, container, false);
-        vSubmitButton = (TextView) view.findViewById(R.id.submitButton);
-        vEmailEditText = (EditText) view.findViewById(R.id.emailEditText);
-        vPasswordEditText = (EditText) view.findViewById(R.id.passwordEditText);
-        vNumberEditText = (EditText) view.findViewById(R.id.numberEditText);
+        ButterKnife.bind(this, view);
 
         vSubmitButton.setEnabled(false);
-        RxView.clicks(vSubmitButton).subscribe(v -> Toast.makeText(getContext(), R.string.submitSuccess, Toast.LENGTH_LONG).show());
+        RxView.clicks(vSubmitButton).subscribe(v ->
+                Toast.makeText(getContext(), R.string.submitSuccess, Toast.LENGTH_LONG).show());
 
         mEmailChangeObservable = RxTextView.textChanges(vEmailEditText).skip(1);
         mPasswordChangeObservable = RxTextView.textChanges(vPasswordEditText).skip(1);
@@ -67,24 +70,24 @@ public class ValidationFragment extends Fragment {
                     boolean numValid = !isEmpty(newNumber);
 
                     if (!emailValid) {
-                        vEmailEditText.setError(getContext().getString(R.string.invalidEmail));
+                        vEmailEditText.setError(getString(R.string.invalidEmail));
                     }
 
                     if (!passValid) {
-                        vPasswordEditText.setError(getContext().getString(R.string.invalidPassword));
+                        vPasswordEditText.setError(getString(R.string.invalidPassword));
                     }
 
                     if (numValid) {
                         int num = Integer.parseInt(newNumber.toString());
                         numValid = num > 0 && num <= 100;
                     } else {
-                        vNumberEditText.setError(getContext().getString(R.string.invalidNumber));
+                        vNumberEditText.setError(getString(R.string.invalidNumber));
                     }
 
                     return emailValid && passValid && numValid;
                 }).subscribe(vSubmitButton::setEnabled,
-                e -> Log.e(TAG, getContext().getString(R.string.onError), e),
-                () -> Log.e(TAG, getContext().getString(R.string.onCompleted))
+                e -> Log.e(TAG, getString(R.string.onError), e),
+                () -> Log.e(TAG, getString(R.string.onCompleted))
         );
     }
 
@@ -95,5 +98,4 @@ public class ValidationFragment extends Fragment {
             mSubscription.unsubscribe();
         }
     }
-
 }

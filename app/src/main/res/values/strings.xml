@@ -35,5 +35,10 @@
     <string name="invalidPassword">Invalid password!</string>
     <string name="invalidNumber">Invalid number!</string>
     <string name="loadingUsers">Loading list of users</string>
+    <string name="loading">Loading</string>
+    <string name="longOperationComplete">Long operation completed</string>
+    <string name="onNext">"onNext"</string>
+    <string name="dataString">"dataString "</string>
+    <string name="loadingComplete">Loading complete</string>
 
 </resources>

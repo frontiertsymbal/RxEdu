@@ -1,12 +1,8 @@
 package net.mobindustry.rxedu.ui.dialog;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +33,14 @@ public class ProgressDialog extends DialogFragment {
 
     public static ProgressDialog newInstance(String messageString) {
         return newInstance(-1, messageString, DIALOG_INDETERMINATE, DIALOG_CANCELABLE);
+    }
+
+    public static ProgressDialog newInstance(int message, boolean cancellable) {
+        return newInstance(message, null, DIALOG_INDETERMINATE, cancellable);
+    }
+
+    public static ProgressDialog newInstance(String messageString, boolean cancellable) {
+        return newInstance(-1, messageString, DIALOG_INDETERMINATE, cancellable);
     }
 
     public static ProgressDialog newInstance(int message, String messageString, boolean indeterminate, boolean cancelable) {

@@ -24,5 +24,4 @@ public class RxBusFragment extends Fragment {
 
         return view;
     }
-
 }

@@ -3,19 +3,20 @@ package net.mobindustry.rxedu.ui.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import net.mobindustry.rxedu.R;
-import net.mobindustry.rxedu.rxBus.RxBus;
-import net.mobindustry.rxedu.rxBus.TapEvent;
+import net.mobindustry.rxedu.rx.rxBus.RxBus;
+import net.mobindustry.rxedu.rx.rxBus.TapEvent;
 import net.mobindustry.rxedu.utils.AnimationHelper;
 
 import java.util.concurrent.TimeUnit;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.observables.ConnectableObservable;
 import rx.subscriptions.CompositeSubscription;
@@ -25,8 +26,10 @@ public class RxBusBottomFragment
 
     private final int DEBOUNCE_TIMEOUT = 1;
 
-    private TextView vTapCount;
-    private TextView vTapText;
+    @Bind(R.id.rxbusTapCount)
+    TextView vTapCount;
+    @Bind(R.id.rxbusTapText)
+    TextView vTapText;
 
     private RxBus mRxBus;
     private CompositeSubscription mCompositeSubscription;
@@ -36,9 +39,7 @@ public class RxBusBottomFragment
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rxbus_bottom, container, false);
-
-        vTapCount = (TextView) view.findViewById(R.id.rxbusTapCount);
-        vTapText = (TextView) view.findViewById(R.id.rxbusTapText);
+        ButterKnife.bind(this, view);
 
         return view;
     }
@@ -56,13 +57,12 @@ public class RxBusBottomFragment
 
         ConnectableObservable<Object> tapEventEmitter = mRxBus.toObserverable().publish();
 
-        mCompositeSubscription
-                .add(tapEventEmitter.subscribe(event -> {
+        mCompositeSubscription.add(tapEventEmitter.subscribe(event -> {
                     if (event instanceof TapEvent) {
                         AnimationHelper.showTapText(vTapText);
                     }
-                }));
-
+                })
+        );
 
         mCompositeSubscription.add(tapEventEmitter.publish(stream ->
                         stream.buffer(stream.debounce(DEBOUNCE_TIMEOUT, TimeUnit.SECONDS)))

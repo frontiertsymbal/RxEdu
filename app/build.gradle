@@ -1,4 +1,4 @@
-//step 1 add dependency to me.tatarka:gradle-retrolambda
+//step 1 add build script to me.tatarka:gradle-retrolambda
 buildscript {
     repositories {
         mavenCentral()
@@ -44,13 +44,21 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
+
     //step 4 add library rxJava, rxAndroid, rxLifecycle
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'com.trello:rxlifecycle:0.4.0'
+
+    // rxBinding
     compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+
+    // Retrofit, okHttp and rxAdapter
     compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
     compile 'com.squareup.okhttp3:okhttp:3.0.1'
+
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.sqlbrite:sqlbrite:0.5.1'
 }

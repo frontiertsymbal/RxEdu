@@ -11,11 +11,16 @@ import android.widget.Button;
 import com.jakewharton.rxbinding.view.RxView;
 
 import net.mobindustry.rxedu.R;
-import net.mobindustry.rxedu.rxBus.RxBus;
-import net.mobindustry.rxedu.rxBus.TapEvent;
+import net.mobindustry.rxedu.rx.rxBus.RxBus;
+import net.mobindustry.rxedu.rx.rxBus.TapEvent;
 
-public class RxBusTopFragment
-      extends Fragment {
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class RxBusTopFragment extends Fragment {
+
+    @Bind(R.id.rxBusTap)
+    Button tapButton;
 
     private RxBus mRxBus;
 
@@ -23,7 +28,7 @@ public class RxBusTopFragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rxbus_top, container, false);
-        Button tapButton = (Button) view.findViewById(R.id.rxBusTap);
+        ButterKnife.bind(this, view);
 
         RxView.clicks(tapButton).subscribe(v -> {
             if (mRxBus.hasObservers()) {
